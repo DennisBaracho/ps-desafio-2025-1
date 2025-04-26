@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,17 @@ Route::middleware(['auth:sanctum'])->group(function () {
         return response()->json(Auth::user(), Response::HTTP_OK);
     });
 });
+
+
+Route::get('/categories', [CategoryController::class, 'index']);
+
+Route::post('/categories', [CategoryController::class, 'store']);
+
+Route::get('/categories/{id}', [CategoryController::class, 'show']);
+
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
+
+Route::put('/categories/{id}', [CategoryController::class, 'update']);
 
 Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
     Route::apiResource('/users', UserController::class);

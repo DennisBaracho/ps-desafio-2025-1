@@ -1,4 +1,4 @@
-wwwww<?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('permission_user', function (Blueprint $table) {
-            $table->foreignUuid('user_id');
-            $table->foreignUuid('permission_id');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string(column: 'label');
+            $table->timestamps();
         });
     }
 
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('permission_user');
+        Schema::dropIfExists('categories');
     }
 };
