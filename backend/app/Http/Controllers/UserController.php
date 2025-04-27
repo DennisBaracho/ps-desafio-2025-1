@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 
@@ -19,8 +20,8 @@ class UserController extends Controller
     public function index(Request $request): JsonResponse
     {
         $users = User::query()
-            ->when($request->has('name'), fn ($query) => $query->orWhere('name', 'like', "%{$request['name']}%"))
-            ->when($request->has('email'), fn ($query) => $query->orWhere('email', 'like', "%{$request['email']}%"))
+            ->when($request->has('name'), fn($query) => $query->orWhere('name', 'like', "%{$request['name']}%"))
+            ->when($request->has('email'), fn($query) => $query->orWhere('email', 'like', "%{$request['email']}%"))
             ->orderBy('created_at', 'desc')->get();
 
         return response()->json($users, Response::HTTP_OK);
@@ -35,7 +36,7 @@ class UserController extends Controller
         $data['password'] = Hash::make($data['password']);
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('image', 'public');
-            $data['image'] = url('storage/'.$path);
+            $data['image'] = url('storage/' . $path);
         }
 
         /** @var User $user */
@@ -71,12 +72,12 @@ class UserController extends Controller
             try {
                 if ($user['image']) {
                     $image_name = explode('image/', $user['image']);
-                    Storage::disk('public')->delete('image/'.$image_name[1]);
+                    Storage::disk('public')->delete('image/' . $image_name[1]);
                 }
             } catch (Throwable) {
             } finally {
                 $path = $request->file('image')->store('image', 'public');
-                $data['image'] = url('storage/'.$path);
+                $data['image'] = url('storage/' . $path);
             }
         }
 
@@ -90,7 +91,7 @@ class UserController extends Controller
      */
     public function destroy(User $user): JsonResponse
     {
-        $loggedUser = auth()->user();
+        $loggedUser =  auth::user();
 
         if ($loggedUser['id'] == $user['id']) {
             return response()->json(['message' => 'Usuários não podem se deletar.'], Response::HTTP_FORBIDDEN);
@@ -99,6 +100,5 @@ class UserController extends Controller
         $user->delete();
 
         return response()->json([], Response::HTTP_NO_CONTENT);
-
     }
 }

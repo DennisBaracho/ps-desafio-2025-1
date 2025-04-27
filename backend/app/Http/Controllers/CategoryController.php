@@ -23,16 +23,8 @@ class CategoryController extends Controller
      */
     public function index(): JsonResponse
     {
-        $categories = $this->category->all();
+        $categories = $this->category->with('vehicles')->get();
         return response()->json($categories, Response::HTTP_OK);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -48,20 +40,12 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id, Category $category): JsonResponse
+    public function show($id): JsonResponse
     {
-        $team = $this->category->findOrFail($id);
+        $category = $this->category->findOrFail($id);
         return response()->json($category, Response::HTTP_OK);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category)
-    {
-        //
-    }
-
+    
     /**
      * Update the specified resource in storage.
      */
@@ -76,7 +60,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category, $id)
+    public function destroy($id)
     {
         $category = $this->category->findOrFail($id);
         $category -> delete();
