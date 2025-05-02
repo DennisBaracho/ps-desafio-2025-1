@@ -15,11 +15,18 @@ class VehicleFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    public function generateImage(): string
+    {
+        $id = $this->faker->numberBetween(0, 1084);
+
+        return "https://picsum.photos/id/$id/200/300";
+    }
     public function definition(): array
     {
         return [
             'name' => $this->faker->unique()->word,
-            #'image' => $this->faker()->
+            'image' => $this->generateImage(),
             'brand' => $this->faker->unique()->word,
             'model_year' => $this->faker->numberBetween(1990, 2025),
             'in_stock' => $this->faker->numberBetween(0, 10),
