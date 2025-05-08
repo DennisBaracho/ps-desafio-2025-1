@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Http\Controllers\Controller;
+// use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -12,18 +12,19 @@ use Symfony\Component\HttpFoundation\Response;
 class CategoryController extends Controller
 {
 
-    protected $category;
+    private $categories;
 
-    public function __construct(Category $category) {
-        $this->category = $category;
+    public function __construct(Category $category)
+    {
+        $this->categories = $category;
     }
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index(): JsonResponse
     {
-        $categories = $this->category->with('vehicles')->get();
+        $categories = $this->categories->with('vehicles')->get();
         return response()->json($categories, Response::HTTP_OK);
     }
 
@@ -33,7 +34,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request): JsonResponse
     {
         $data = $request->validated();
-        $category = $this->category->create($data);
+        $category = $this->categories->create($data);
         return response()->json($category, Response::HTTP_CREATED);
     }
 
@@ -42,18 +43,18 @@ class CategoryController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $category = $this->category->findOrFail($id);
+        $category = $this->categories->with('vehicles')->findOrFail($id);
         return response()->json($category, Response::HTTP_OK);
     }
-    
+
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateCategoryRequest $request, Category $category, $id): JsonResponse
     {
-        $category = $this->category->findOrFail($id);
+        $category = $this->categories->findOrFail($id);
         $data = $request->validated();
-        $category ->update($data);
+        $category->update($data);
         return response()->json($category, Response::HTTP_OK);
     }
 
@@ -62,8 +63,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = $this->category->findOrFail($id);
-        $category -> delete();
+        $category = $this->categories->findOrFail($id);
+        $category->delete();
         return response()->json(['message' => 'Categoria deletada com sucesso']);
     }
 }

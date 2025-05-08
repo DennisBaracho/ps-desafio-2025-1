@@ -13,8 +13,8 @@ import { updateCategory } from '@/actions/category'
 import { filterFormData } from '@/services/filter-form-data'
 import { useEffect, useState } from 'react'
 import { useToast } from '@/components/use-toast'
-import { categoryType } from '@/types/category'
 import { ResponseErrorType, api } from '@/services/api'
+import { categoryType } from '@/types/category'
 
 interface DialogUpdateCategoryProps {
   id: string
@@ -32,14 +32,14 @@ export function DialogUpdateCategory({
 
   useEffect(() => {
     const requestData = async () => {
-      const { response } = null // requisicao para api
+      const { response } = await api<categoryType>('GET', `/categories/${id}`) // requisicao para api
 
       if (response) {
         setCategory(response)
       } else {
         setCategory(null)
         toast({
-          title: 'Categoria  não encontrada!',
+          title: 'Categoria não encontrada!',
         })
         setOpen(false)
       }

@@ -4,16 +4,16 @@ import {
   DashboardHeaderTitle,
   DashboardMain,
 } from '@/components/dashboard/dashboard-items'
-import { LuLayers } from 'react-icons/lu'
 import ListCategories from './_components/list-categories'
 import { Suspense } from 'react'
+import { MdCategory } from 'react-icons/md'
 
 export default async function Page() {
   return (
     <>
       <DashboardHeader>
         <DashboardHeaderTitle>
-          <LuLayers />
+          <MdCategory />
           Categorias
         </DashboardHeaderTitle>
         <DashboardHeaderDescription>
