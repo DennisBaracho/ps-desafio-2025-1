@@ -19,7 +19,10 @@ interface DialogCreateVehicleProps {
   children: React.ReactNode
 }
 
-export function DialogVehicleDelete({ id, children }: DialogCreateVehicleProps) {
+export function DialogVehicleDelete({
+  id,
+  children,
+}: DialogCreateVehicleProps) {
   const [open, setOpen] = useState<boolean>()
   const { toast } = useToast()
 
@@ -28,11 +31,11 @@ export function DialogVehicleDelete({ id, children }: DialogCreateVehicleProps) 
 
     if (error) {
       toast({
-        title: 'Não foi possível excluir o livro!',
+        title: 'Não foi possível excluir o veículo!',
       })
     } else {
       toast({
-        title: 'Livro deletado com sucesso!',
+        title: 'Veículo deletado com sucesso!',
       })
     }
 
