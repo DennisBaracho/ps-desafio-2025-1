@@ -1,0 +1,27 @@
+.hero_wrapper {
+    position: relative;
+}
+
+.hero_image {
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--highlight-font);
+    font-size: 5vw;
+    color: var(--primary-orange);
+    text-shadow: 4px 4px 5px black;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+}
+

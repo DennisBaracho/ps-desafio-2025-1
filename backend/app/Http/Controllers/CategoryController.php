@@ -12,11 +12,11 @@ use Symfony\Component\HttpFoundation\Response;
 class CategoryController extends Controller
 {
 
-    private $categories;
+    private $category;
 
     public function __construct(Category $category)
     {
-        $this->categories = $category;
+        $this->category = $category;
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function index(): JsonResponse
     {
-        $categories = $this->categories->with('vehicles')->get();
+        $categories = $this->category->with('vehicles')->get();
         return response()->json($categories, Response::HTTP_OK);
     }
 
@@ -34,7 +34,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request): JsonResponse
     {
         $data = $request->validated();
-        $category = $this->categories->create($data);
+        $category = $this->category->create($data);
         return response()->json($category, Response::HTTP_CREATED);
     }
 
@@ -43,7 +43,7 @@ class CategoryController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $category = $this->categories->with('vehicles')->findOrFail($id);
+        $category = $this->category->with('vehicles')->findOrFail($id);
         return response()->json($category, Response::HTTP_OK);
     }
 
@@ -52,7 +52,7 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category, $id): JsonResponse
     {
-        $category = $this->categories->findOrFail($id);
+        $category = $this->category->findOrFail($id);
         $data = $request->validated();
         $category->update($data);
         return response()->json($category, Response::HTTP_OK);
@@ -63,7 +63,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = $this->categories->findOrFail($id);
+        $category = $this->category->findOrFail($id);
         $category->delete();
         return response()->json(['message' => 'Categoria deletada com sucesso']);
     }
