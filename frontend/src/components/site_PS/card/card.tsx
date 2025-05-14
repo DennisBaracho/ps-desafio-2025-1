@@ -44,7 +44,7 @@ export default function Card({ vehicle }: vehicleProp) {
         <p className={style.card_content}>
           Ano de fabricação: {vehicle.model_year}
         </p>
-        <p className={style.card_content}>Categoria:{vehicle.category.label}</p>
+        <p className={style.card_content}>Categoria: {vehicle.category.label}</p>
         <p className={style.card_content}>Em estoque: {amount}</p>
         <p className={style.card_content}>Preço: R${vehicle.price}</p>
         <input

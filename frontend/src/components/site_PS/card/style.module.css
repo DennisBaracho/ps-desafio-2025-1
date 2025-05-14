@@ -46,7 +46,7 @@
 }
 
 .card_content {
-    color: var(--font-gray);
+    color: var(--gray);
     font-size: 19px;
     padding-bottom: 5px;
     text-align: center;
@@ -77,6 +77,10 @@
 
 .buy_button:hover {
     background-color: var(--secondary-orange);
+}
+
+.buy_button:disabled {
+    background-color: var(--gray);
 }
 
 @media screen and (max-width: 600px) {
