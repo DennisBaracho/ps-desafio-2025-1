@@ -1,30 +1,37 @@
-'use client'
-import '../variables.css'
-import style from './style.module.css'
-import { vehicleType } from '@/types/vehicle'
-// import { api } from '@/services/api'
 import { buyVehicle } from '@/actions/vehicle'
-// import { useToast } from '@/components/use-toast'
-// import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import style from '@/components/sty'
 
-interface vehicleProp {
-  vehicle: vehicleType
-}
+export default function BuyButton({ vehicleId, initialStock }: BuyButtonProps) {
+  const [amount, setAmount] = useState(initialStock)
+  const [buttonValue, setButtonValue] = useState('Comprar')
+  const [soldOut, setSoldOut] = useState(false)
 
-export function buyButton({ vehicle }: vehicleProp) {
-  async function buyVehicles(id: string) {
-    const response = await buyVehicle(id)
+  async function handleBuy() {
+    if (amount <= 0) return
+    setAmount((prev) => prev - 1)
+    setButtonValue('Comprado')
+    const response = await buyVehicle(vehicleId)
     console.log(response)
   }
 
+  useEffect(() => {
+    if (amount <= 0) {
+      setButtonValue('Esgotado')
+      setSoldOut(true)
+    }
+  }, [amount])
+
   return (
-    <div className={style.container}>
+    <>
+      <p className={style.card_content}>Em estoque: {amount}</p>
       <input
         type="button"
-        defaultValue={'Comprar'}
+        disabled={soldOut}
+        value={buttonValue}
         className={style.buy_button}
-        onClick={() => buyVehicles(vehicle.id)}
-      ></input>
-    </div>
+        onClick={handleBuy}
+      />
+    </>
   )
 }

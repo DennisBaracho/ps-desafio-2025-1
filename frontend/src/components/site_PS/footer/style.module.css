@@ -41,7 +41,7 @@
     width: 50px;
     height: 50px;
     align-items: center;
-    color: var(--white);
+    color: var(--font-footer-color);
     transition: all 0.5s ease;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .list>li>.sobre_link {
-    color: white;
+    color: var(--font-footer-color);
     transition: all 0.5s ease;
     font-weight: bold;
 }
@@ -84,8 +84,8 @@
     padding: 20px;
     font-weight: 200;
     background-repeat: black;
-    color: var(--font-black);
-    background-color: var(--white);
+    color: var(--font-copyright-color);
+    background-color: var(--background-copyright-color);
     text-align: center;
 }
 

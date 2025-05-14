@@ -12,7 +12,7 @@
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: #D9D9D9;
+    background-color: var(--background-body-color);
     position: relative;
     padding-bottom: 340px;
 }

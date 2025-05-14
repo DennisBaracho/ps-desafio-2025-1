@@ -4,17 +4,32 @@
     width: 175px;
     max-width: 250px;
     max-height: 50px;
-    padding: 5px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 10px;
     font-size: 1.5em;
     font-family: var(--highlight-font);
     background-color: var(--primary-orange);
-    color: var(--white);
+    color: var(--font-color);
     transition-duration: 0.4s;
 }
 
 .buy_button:hover {
     background-color: var(--secondary-orange);
+}
+
+@media screen and (max-width: 600px) {
+    .buy_button {
+        width: 80px;
+        height: 30px;
+        padding: 5px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+        font-size: 1em;
+        justify-self: flex-end;
+        position: absolute;
+        right: 0;
+        translate: 0% -110%;
+    }
 }

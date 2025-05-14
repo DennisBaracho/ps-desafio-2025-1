@@ -1,10 +1,10 @@
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
     max-width: 100%;
+    color: var(--font-filter-color);
 }
 
 .filter_form {
@@ -12,18 +12,12 @@
     gap: 10px;
 }
 
-#filter_image {
-
-    padding-right: 10px;
-    width: 6vh;
-}
-
 .filter_fields {
     padding: 10px;
     font-size: 1em;
     font-family: var(--default-font);
     font-weight: 100;
-    background-color: var(--white);
+    background-color: var(--background-input-color);
     border: none;
     outline: none;
     box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
@@ -33,13 +27,13 @@
     width: 30vh;
     max-height: 50px;
     border-radius: 15px;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--font-filter-color);
 }
 
 #select_category {
     width: 20vh;
     border-radius: 15px;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--font-filter-color);
 }
 
 #filter_button {
@@ -47,7 +41,7 @@
     border-radius: 10px;
     background-color: var(--primary-orange);
     font-weight: bold;
-    color: var(--white);
+    color: var(--font-filter-button-color);
     text-decoration: none;
     transition-duration: 0.4s;
 }

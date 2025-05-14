@@ -2,16 +2,13 @@
 
 import style from './style.module.css'
 import '../variables.css'
+import { FaFilter } from 'react-icons/fa'
 
 export default function filters() {
   return (
     <>
       <div className={style.container}>
-        <img
-          src="./images/filter-icon.png"
-          alt="Imagem de filtro."
-          id={style.filter_image}
-        />
+        <FaFilter size={40} />
         <form className={style.filter_form} method="get">
           <input
             type="text"

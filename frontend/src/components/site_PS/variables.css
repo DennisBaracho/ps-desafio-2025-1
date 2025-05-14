@@ -1,12 +1,47 @@
 :root {
-    --font-black: black;
-    --gray: rgb(186, 186, 186);
+    --font-navbar-color: black;
+    --font-card-content: rgb(186, 186, 186);
+    --font-input-color: gray;
+    --font-filter-button-color: white;
+    --font-filter-color: black;
+    --font-footer-color: #FFFFFF;
+    --font-copyright-color: #000000;
+
+    --background-copyright-color: white;
+    --background-navbar-color: white;
+    --background-body-color: #D9D9D9;
+    --background-card-color: white;
+    --background-input-color: rgb(255, 255, 255);
+    --background-disabled-button-color: rgb(186, 186, 186);
+
     --primary-orange: #FFA500;
     --secondary-orange: #ec8612;
-    --white: #FFFFFF;
-
-    --background-gray: #D9D9D9;
-
     --default-font: "Open Sans", sans-serif;
     --highlight-font: "Bebas Neue", sans-serif;
+    
+}
+
+[data-theme='dark'] {
+
+    --background-body-color: #121212;
+
+    --font-navbar-color: #ffffff;
+    --background-navbar-color: rgb(19, 19, 19);
+
+    --font-card-content: #E0E0E0;
+    --background-card-color: #888888;
+    --background-disabled-button: #444444;
+
+    --font-footer-color: #ffffff;
+    --font-copyright-color: #ffffff;
+    --background-copyright-color: #121212;
+
+    --font-filter-button-color: white;
+    --font-filter-color: white;
+    --font-input-color: rgb(255, 255, 255);
+    --background-input-color: #444444;
+}
+
+* {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }

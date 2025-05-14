@@ -6,7 +6,7 @@ import { getSession } from 'next-auth/react'
 import { useToast } from '@/components/use-toast'
 import { MdAdminPanelSettings } from 'react-icons/md'
 import { FaUser } from 'react-icons/fa'
-
+import DarkMode from '@/components/site_PS/dark_mode/dark_mode'
 import '../variables.css'
 interface navBarProps {
   logo: string
@@ -39,7 +39,7 @@ export default function Navbar({ logo }: navBarProps) {
         </a>
         <ul className={style.nav_links}>
           <li className={style.nav_item}>
-            <a href="#">Inicio</a>
+            <a href="#">Início</a>
           </li>
         </ul>
 
@@ -59,10 +59,11 @@ export default function Navbar({ logo }: navBarProps) {
               {isAuth ? (
                 <MdAdminPanelSettings size={30} />
               ) : (
-                <FaUser size={30} />
+                <FaUser size={20} />
               )}
             </a>
           </li>
+          <DarkMode />
         </ul>
       </div>
     </nav>
