@@ -16,14 +16,15 @@ class VehicleController extends Controller
     // Builds an vehicle
     protected $vehicle;
 
-    public function __construct(Vehicle $vehicle){
+    public function __construct(Vehicle $vehicle)
+    {
         $this->vehicle = $vehicle;
     }
-    
+
     /**
      * Display a listing of the resource.
      */
-    public function index(): JsonResponse 
+    public function index(): JsonResponse
     {
         $vehicles = $this->vehicle->with('category')->get();
 
@@ -36,10 +37,10 @@ class VehicleController extends Controller
     public function store(StoreVehicleRequest $request): JsonResponse
     {
         $data = $request->validated();
-        
-        if ($request->hasFile('image')){
-            $path = $request->file('image')->store('vehicles','public');
-            $data['image'] = url('storage/' .$path);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('vehicles', 'public');
+            $data['image'] = url('storage/' . $path);
         }
 
         $vehicle = $this->vehicle->create($data);
@@ -64,18 +65,18 @@ class VehicleController extends Controller
     {
         $vehicle = $this->vehicle->with('category')->findOrFail($id);
         $data = $request->validated();
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             try {
                 $image_name = explode('vehicle/', $vehicle['imagem']);
-                Storage::disk('public')->delete('vehicles/'.$image_name[1]);
+                Storage::disk('public')->delete('vehicles/' . $image_name[1]);
             } catch (Throwable) {
             } finally {
-                    $path = $request->file('image')->store('vehicles', 'public');
-                    $data['image'] = url('storage/' .$path);
-                }
+                $path = $request->file('image')->store('vehicles', 'public');
+                $data['image'] = url('storage/' . $path);
             }
-            $vehicle->update($data);
-            return response()->json($vehicle, Response::HTTP_OK);
+        }
+        $vehicle->update($data);
+        return response()->json($vehicle, Response::HTTP_OK);
     }
 
     /**
@@ -85,7 +86,19 @@ class VehicleController extends Controller
     {
         $vehicle = $this->vehicle->findOrFail($id);
         $vehicle->delete();
-        
+
         return response()->json(['message' => 'Veiculo deletado com sucesso']);
+    }
+
+    public function buy($id)
+    {
+
+        $vehicle = $this->vehicle->findOrFail($id);
+        if ($vehicle->in_stock <= 0) {
+            return response()->json(['message' => 'Veículo fora de estoque.'], 400);
+        }
+        $vehicle->in_stock -= 1;
+        $vehicle->save();
+        return response()->json(['message' => $vehicle->in_stock]);
     }
 }

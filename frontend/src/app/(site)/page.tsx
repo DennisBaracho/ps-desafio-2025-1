@@ -10,6 +10,7 @@ import Navbar from '@/components/site_PS/navbar/navbar'
 import Footer from '@/components/site_PS/footer/footer'
 import Hero from '@/components/site_PS/hero/hero'
 import Filter from '@/components/site_PS/filters/filters'
+// import BuyButton from '@/componentes/site_PS/buy_button/buy_button'
 
 export default function Home() {
   const [vehicles, setVehicles] = useState<vehicleType[] | undefined>()

@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/vehicles', [VehicleController::class, 'index']);
-
+Route::post('/buy/{id}', [VehicleController::class, 'buy']);
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
 Route::get('/vehicles/{id}', [VehicleController::class, 'show']);
 
