@@ -1,8 +1,10 @@
 :root {
     --font-black: black;
+    --font-gray: rgb(186, 186, 186);
     --primary-orange: #FFA500;
     --secondary-orange: #ec8612;
     --white: #FFFFFF;
+
     --background-gray: #D9D9D9;
 
     --default-font: "Open Sans", sans-serif;
