@@ -1,0 +1,21 @@
+.filter_button {
+    max-width: 200px;
+    max-height: 200px;
+    min-height: 40px;
+    min-width: 100px;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 70px;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: var(--primary-orange);
+    font-weight: bold;
+    color: var(--font-filter-button-color);
+    text-decoration: none;
+    transition-duration: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.filter_button:hover {
+    background-color: var(--secondary-orange);
+}

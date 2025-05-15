@@ -20,5 +20,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
         $user->assignPermission('admin');
+<<<<<<< Updated upstream
+=======
+
+        $this->call([
+            CategorySeeder::class,
+        ]);
+
+        Vehicle::factory(9)->create();
+>>>>>>> Stashed changes
     }
 }

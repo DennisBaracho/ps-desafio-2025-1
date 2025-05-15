@@ -1,0 +1,49 @@
+:root {
+  /* ========== fonts ========== */
+  --default-font: "Open Sans", sans-serif;
+  --highlight-font: "Bebas Neue", sans-serif;
+
+  /* ========== font colors ========== */
+  --font-navbar-color: black;
+  --font-card-content: rgb(186, 186, 186);
+  --font-input-color: gray;
+  --font-filter-button-color: white;
+  --font-filter-color: black;
+  --font-footer-color: #ffffff;
+  --font-copyright-color: #000000;
+
+  /* ========== background colors ========== */
+  --background-body-color: #d9d9d9;
+  --background-navbar-color: white;
+  --background-card-color: white;
+  --background-input-color: #ffffff;
+  --background-disabled-button: #888888;
+  --background-copyright-color: white;
+
+  /* ========== brand colors ========== */
+  --primary-orange: #ffa500;
+  --secondary-orange: #ec8612;
+}
+
+[data-theme='dark'] {
+  /* ========== font colors ========== */
+  --font-navbar-color: #ffffff;
+  --font-card-content: #efefef;
+  --font-input-color: #ffffff;
+  --font-filter-button-color: white;
+  --font-filter-color: white;
+  --font-footer-color: #ffffff;
+  --font-copyright-color: #ffffff;
+
+  /* ========== background colors ========== */
+  --background-body-color: #121212;
+  --background-navbar-color: rgb(19, 19, 19);
+  --background-card-color: #888888;
+  --background-input-color: #444444;
+  --background-disabled-button: #444444;
+  --background-copyright-color: #121212;
+}
+
+* {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
