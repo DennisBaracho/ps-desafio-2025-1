@@ -20,6 +20,7 @@ Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
     Route::apiResource('/vehicles', VehicleController::class)->except(['index', 'show']);
 });
 
+Route::get('/filter/{id}', [VehicleController::class, 'filter']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/vehicles', [VehicleController::class, 'index']);
 Route::post('/buy/{id}', [VehicleController::class, 'buy']);

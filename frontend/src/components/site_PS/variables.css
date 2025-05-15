@@ -1,47 +1,50 @@
 :root {
-    --font-navbar-color: black;
-    --font-card-content: rgb(186, 186, 186);
-    --font-input-color: gray;
-    --font-filter-button-color: white;
-    --font-filter-color: black;
-    --font-footer-color: #FFFFFF;
-    --font-copyright-color: #000000;
+  /* ========== fonts ========== */
+  --default-font: "Open Sans", sans-serif;
+  --highlight-font: "Bebas Neue", sans-serif;
 
-    --background-copyright-color: white;
-    --background-navbar-color: white;
-    --background-body-color: #D9D9D9;
-    --background-card-color: white;
-    --background-input-color: rgb(255, 255, 255);
-    --background-disabled-button-color: rgb(186, 186, 186);
+  /* ========== font colors ========== */
+  --font-navbar-color: black;
+  /* --font-card-content: rgb(186, 186, 186); */
+  --font-card-content: black;
+  --font-input-color: gray;
+  --font-filter-button-color: white;
+  --font-filter-color: black;
+  --font-footer-color: #ffffff;
+  --font-copyright-color: #000000;
 
-    --primary-orange: #FFA500;
-    --secondary-orange: #ec8612;
-    --default-font: "Open Sans", sans-serif;
-    --highlight-font: "Bebas Neue", sans-serif;
-    
+  /* ========== background colors ========== */
+  --background-body-color: #d9d9d9;
+  --background-navbar-color: white;
+  --background-card-color: white;
+  --background-input-color: #ffffff;
+  --background-disabled-button-color: #888888;
+  --background-copyright-color: white;
+
+  /* ========== brand colors ========== */
+  --primary-orange: #ffa500;
+  --secondary-orange: #ec8612;
 }
 
 [data-theme='dark'] {
+  /* ========== font colors ========== */
+  --font-navbar-color: #ffffff;
+  --font-card-content: #efefef;
+  --font-input-color: #ffffff;
+  --font-filter-button-color: white;
+  --font-filter-color: white;
+  --font-footer-color: #ffffff;
+  --font-copyright-color: #ffffff;
 
-    --background-body-color: #121212;
-
-    --font-navbar-color: #ffffff;
-    --background-navbar-color: rgb(19, 19, 19);
-
-    --font-card-content: #E0E0E0;
-    --background-card-color: #888888;
-    --background-disabled-button: #444444;
-
-    --font-footer-color: #ffffff;
-    --font-copyright-color: #ffffff;
-    --background-copyright-color: #121212;
-
-    --font-filter-button-color: white;
-    --font-filter-color: white;
-    --font-input-color: rgb(255, 255, 255);
-    --background-input-color: #444444;
+  /* ========== background colors ========== */
+  --background-body-color: #121212;
+  --background-navbar-color: rgb(19, 19, 19);
+  --background-card-color: #888888;
+  --background-input-color: #444444;
+  --background-disabled-button-color: #444444;
+  --background-copyright-color: #121212;
 }
 
 * {
-    transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }

@@ -38,3 +38,12 @@ export async function buyVehicle(id: string): Promise<number | null> {
   }
   return null
 }
+
+export async function filterVehicle(id: string) {
+  const res = await api('GET', `/filter/${id}`)
+
+  if (!res.error) {
+    revalidatePath('/admin/veiculos')
+  }
+  return JSON.stringify(res)
+}

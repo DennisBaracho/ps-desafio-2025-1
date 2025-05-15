@@ -6,11 +6,6 @@ import style from './style.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 
-// swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-
 const heroItems = [
   { id: '1', image: '/images/hero.png' },
   { id: '2', image: '/images/Hero2.png' },

@@ -101,4 +101,10 @@ class VehicleController extends Controller
         $vehicle->save();
         return response()->json($vehicle->in_stock, Response::HTTP_OK);
     }
+
+     public function filter($id): JsonResponse
+    {
+        $vehicles = $this->vehicle->with('category')->where('category_id', $id)->get();
+        return response()->json($vehicles, Response::HTTP_OK);
+    }
 }

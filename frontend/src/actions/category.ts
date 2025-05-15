@@ -29,3 +29,12 @@ export async function destroyCategory(id: string) {
   }
   return JSON.stringify(res)
 }
+
+export async function getCategory() {
+  const res = await api('GET', `/categories/`)
+
+  if (!res.error) {
+    revalidatePath('/admin/categorias')
+  }
+  return JSON.stringify(res)
+}

@@ -126,7 +126,7 @@ export default function FormFieldsVehicle({
             name="brand"
             id="brand"
             placeholder="Insira a marca do veículo"
-            defaultValue={vehicle?.model_year}
+            defaultValue={vehicle?.brand}
             disabled={pending}
             readOnly={readOnly}
             error={error?.errors?.brand}

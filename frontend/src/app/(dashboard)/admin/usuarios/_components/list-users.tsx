@@ -37,7 +37,7 @@ export default async function ListUsers() {
       <DashboardContainer className="flex h-min justify-between space-x-0 gap-y-2.5 max-sm:flex-col">
         <DialogCreateUser>
           <Button size="sm">
-            <LuBook />
+            <FaCirclePlus />
             Novo usuário
           </Button>
         </DialogCreateUser>
