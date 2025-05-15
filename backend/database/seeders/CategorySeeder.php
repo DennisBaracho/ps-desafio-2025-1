@@ -14,7 +14,9 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::create(['label' => 'Carro',]);
-        Category::create(['label' => 'Caminhao',]);
+        Category::create(['label' => 'Caminhão',]);
         Category::create(['label' => 'Moto',]);
+        Category::create(['label' => 'SUV',]);
+        Category::create(['label' => 'Sedan',]);
     }
 }

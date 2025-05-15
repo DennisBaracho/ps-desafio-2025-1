@@ -36,7 +36,9 @@ export default function Home() {
     <>
       <div className={style.page}>
         <Navbar logo="./images/logo-dafirma.png" />
-        <Hero hero="./images/hero.png" />
+        <div className={style.hero}>
+          <Hero />
+        </div>
         <Filter />
         <div className={style.wrapper}>
           {vehicles?.map((vehicle: vehicleType, index: number) => (

@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
         ]);
 
-        Vehicle::factory(3)->create();
+        Vehicle::factory(9)->create();
     }
 }

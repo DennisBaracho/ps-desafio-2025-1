@@ -39,12 +39,6 @@ export default function Navbar({ logo }: navBarProps) {
         </a>
         <ul className={style.nav_links}>
           <li className={style.nav_item}>
-            <a href="#">Início</a>
-          </li>
-        </ul>
-
-        <ul className={style.nav_links}>
-          <li className={style.nav_item}>
             <a href="/admin/veiculos">Veículos</a>
           </li>
         </ul>

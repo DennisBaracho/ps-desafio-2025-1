@@ -26,18 +26,6 @@
     transition: all 0.5s ease;
 }
 
-.title {
-    font-family: 'Bebas Neue', sans-serif;
-    color: black;
-    padding-top: 16px;
-    font-weight: 800;
-    display: flex;
-    font-size: 36px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
 @media screen and (max-width: 660px) {
     .wrapper {
         grid-template-columns: 1fr;
