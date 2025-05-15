@@ -36,4 +36,7 @@ export async function getCategory() {
   }
   return JSON.stringify(res)
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

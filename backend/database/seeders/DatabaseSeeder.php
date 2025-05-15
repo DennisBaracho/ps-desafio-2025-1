@@ -28,6 +28,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Vehicle::factory(9)->create();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

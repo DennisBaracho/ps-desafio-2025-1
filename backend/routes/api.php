@@ -17,7 +17,10 @@ Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
 });
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 Route::get('/filter/{id}', [VehicleController::class, 'filter']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/vehicles', [VehicleController::class, 'index']);

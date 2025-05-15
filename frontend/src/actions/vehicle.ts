@@ -45,4 +45,7 @@ export async function filterVehicle(id: string) {
   }
   return JSON.stringify(res)
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
