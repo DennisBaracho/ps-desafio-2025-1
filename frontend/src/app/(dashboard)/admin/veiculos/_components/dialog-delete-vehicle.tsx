@@ -50,7 +50,7 @@ export function DialogVehicleDelete({
           <DialogTitle>Confirmar exclusão de veículo</DialogTitle>
           <DialogDescription>
             Tem certeza de que deseja excluir este veículo? Esta ação é
-            irreversível e removerá permanentemente o livro do sistema. Deseja
+            irreversível e removerá permanentemente o veículo do sistema. Deseja
             continuar com a exclusão?
           </DialogDescription>
         </DialogHeader>
