@@ -46,8 +46,13 @@ export function DialogVehicleDelete({ id, children }: DialogCreateVehicleProps) 
         <DialogHeader>
           <DialogTitle>Confirmar exclusão de livro</DialogTitle>
           <DialogDescription>
+<<<<<<< Updated upstream
             Tem certeza de que deseja excluir este livro? Esta ação é
             irreversível e removerá permanentemente o livro do sistema. Deseja
+=======
+            Tem certeza de que deseja excluir este veículo? Esta ação é
+            irreversível e removerá permanentemente o veículo do sistema. Deseja
+>>>>>>> Stashed changes
             continuar com a exclusão?
           </DialogDescription>
         </DialogHeader>

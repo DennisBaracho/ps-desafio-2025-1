@@ -20,5 +20,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
         $user->assignPermission('admin');
+<<<<<<< Updated upstream
+=======
+
+        // Chama o CategorySeeder, que cria os atributos base
+        $this->call([
+            CategorySeeder::class,
+        ]);
+
+        // Cria 9 veículos com atributos aleatórios
+        Vehicle::factory(9)->create();
+>>>>>>> Stashed changes
     }
 }
