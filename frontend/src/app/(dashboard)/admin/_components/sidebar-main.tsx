@@ -12,14 +12,8 @@ import {
   UserDropdown,
 } from '@/components/dashboard/sidebar'
 
-import {
-  LuBookOpen,
-  LuAlbum,
-  LuLayers,
-  LuLogOut,
-  LuUsers,
-} from 'react-icons/lu'
-
+import { LuLayers, LuLogOut, LuUsers } from 'react-icons/lu'
+import { IoCarOutline, IoHomeOutline } from 'react-icons/io5'
 import { DropdownMenuItem } from '@/components/dropdown-menu'
 import { signOut, useSession } from 'next-auth/react'
 import logo from '@/assets/img/logo.jpeg'
@@ -36,7 +30,7 @@ export function SidebarMain() {
       </SidebarHeader>
       <SidebarNav>
         <SidebarNavLink href="/admin">
-          <LuAlbum />
+          <IoHomeOutline />
           <SidebarNavLinkLabel>Home</SidebarNavLinkLabel>
         </SidebarNavLink>
         <SidebarNavLink href="/admin/usuarios">
@@ -44,7 +38,7 @@ export function SidebarMain() {
           <SidebarNavLinkLabel>Usuários</SidebarNavLinkLabel>
         </SidebarNavLink>
         <SidebarNavLink href="/admin/veiculos">
-          <LuBookOpen />
+          <IoCarOutline />
           <SidebarNavLinkLabel>Veiculos</SidebarNavLinkLabel>
         </SidebarNavLink>
         <SidebarNavLink href="/admin/categorias">

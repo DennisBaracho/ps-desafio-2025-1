@@ -4,7 +4,7 @@ import {
   DashboardHeaderTitle,
   DashboardMain,
 } from '@/components/dashboard/dashboard-items'
-import { FaCarAlt } from "react-icons/fa";
+import { FaCar } from 'react-icons/fa'
 import ListVehicles from './_components/list-vehicles'
 import { Suspense } from 'react'
 
@@ -13,7 +13,7 @@ export default async function Page() {
     <>
       <DashboardHeader>
         <DashboardHeaderTitle>
-        <FaCarAlt />
+          <FaCar />
           Veículos
         </DashboardHeaderTitle>
         <DashboardHeaderDescription>

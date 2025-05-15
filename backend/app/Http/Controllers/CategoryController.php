@@ -50,7 +50,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, Category $category, $id): JsonResponse
+    public function update(UpdateCategoryRequest $request, $id): JsonResponse
     {
         $category = $this->category->findOrFail($id);
         $data = $request->validated();

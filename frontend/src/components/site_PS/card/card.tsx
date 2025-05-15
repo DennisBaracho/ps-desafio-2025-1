@@ -5,6 +5,7 @@ import { vehicleType } from '@/types/vehicle'
 import style from './style.module.css'
 import { buyVehicle } from '@/actions/vehicle'
 import { useEffect, useState } from 'react'
+import { useToast } from '@/components/use-toast'
 
 interface vehicleProp {
   vehicle: vehicleType
@@ -14,18 +15,44 @@ export default function Card({ vehicle }: vehicleProp) {
   const [buttonValue, setButtonValue] = useState('Comprar')
   const [amount, setAmount] = useState(vehicle.in_stock)
   const [soldOut, setSoldOut] = useState(false)
+  const { toast } = useToast()
+
   async function buyVehicles(id: string) {
-    setAmount((prev) => prev - 1)
     setButtonValue('Comprado')
 
-    const response = await buyVehicle(id)
-    console.log(response)
+    const updatedAmount = await buyVehicle(id)
+
+    if (typeof updatedAmount === 'number') {
+      setAmount(updatedAmount)
+
+      if (updatedAmount <= 0) {
+        setButtonValue('Esgotado')
+        setSoldOut(true)
+        toast({
+          title: 'Produto esgotado!',
+          description: 'O veículo não está mais disponível em estoque.',
+        })
+      } else {
+        toast({
+          title: 'Compra realizada com sucesso!',
+          description: `Quantidade em estoque: ${updatedAmount}`,
+        })
+      }
+    } else {
+      toast({
+        title: 'A compra não foi realizada',
+        description: 'Ocorreu um erro ao tentar comprar o veículo.',
+      })
+      setButtonValue('Comprar')
+    }
   }
 
   useEffect(() => {
     if (amount <= 0) {
       setButtonValue('Esgotado')
       setSoldOut(true)
+    } else {
+      setSoldOut(false)
     }
   }, [amount])
 

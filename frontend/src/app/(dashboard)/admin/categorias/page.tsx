@@ -6,14 +6,14 @@ import {
 } from '@/components/dashboard/dashboard-items'
 import ListCategories from './_components/list-categories'
 import { Suspense } from 'react'
-import { MdCategory } from 'react-icons/md'
+import { FaLayerGroup } from 'react-icons/fa'
 
 export default async function Page() {
   return (
     <>
       <DashboardHeader>
         <DashboardHeaderTitle>
-          <MdCategory />
+          <FaLayerGroup />
           Categorias
         </DashboardHeaderTitle>
         <DashboardHeaderDescription>

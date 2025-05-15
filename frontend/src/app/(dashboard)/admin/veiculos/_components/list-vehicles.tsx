@@ -12,7 +12,8 @@ import {
 import { api } from '@/services/api'
 import { vehicleType } from '@/types/vehicle'
 import { Button } from '@/components/button'
-import { LuInfo, LuPen, LuCircleAlert, LuTrash } from 'react-icons/lu'
+import { LuInfo, LuPen, LuTrash } from 'react-icons/lu'
+import { FaCirclePlus } from 'react-icons/fa6'
 import { DialogUpdateVehicle } from './dialog-update-vehicle'
 import { DialogVehicleDelete } from './dialog-delete-vehicle'
 import { DialogInformationVehicle } from './dialog-information-vehicle'
@@ -36,7 +37,7 @@ export default async function ListVehicles() {
       <DashboardContainer className="flex h-min justify-between space-x-0 gap-y-2.5 max-sm:flex-col">
         <DialogCreateVehicle>
           <Button size="sm">
-            <LuCircleAlert />
+            <FaCirclePlus />
             Novo veículo
           </Button>
         </DialogCreateVehicle>

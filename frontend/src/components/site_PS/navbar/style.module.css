@@ -42,6 +42,11 @@
     transition: 0.5s;
 }
 
+.nav_item:hover>button {
+    color: var(--secondary-orange);
+    transition: 0.5s;
+}
+
 @media screen and (max-width: 800px) {
     .navbar_nav {
         justify-content: center;

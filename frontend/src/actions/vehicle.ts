@@ -30,11 +30,11 @@ export async function destroyVehicle(id: string) {
   return JSON.stringify(res)
 }
 
-export async function buyVehicle(id: string) {
+export async function buyVehicle(id: string): Promise<number | null> {
   const res = await api('POST', `/buy/${id}`)
 
   if (!res.error) {
-    revalidatePath('/admin/veiculos')
+    return res.response as number
   }
-  return JSON.stringify(res)
+  return null
 }

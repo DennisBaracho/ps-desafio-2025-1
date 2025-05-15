@@ -90,7 +90,7 @@ class VehicleController extends Controller
         return response()->json(['message' => 'Veiculo deletado com sucesso']);
     }
 
-    public function buy($id)
+    public function buy($id): JsonResponse
     {
 
         $vehicle = $this->vehicle->findOrFail($id);
@@ -99,6 +99,6 @@ class VehicleController extends Controller
         }
         $vehicle->in_stock -= 1;
         $vehicle->save();
-        return response()->json(['message' => $vehicle->in_stock]);
+        return response()->json($vehicle->in_stock, Response::HTTP_OK);
     }
 }

@@ -16,15 +16,17 @@ export default function DarkMode() {
 
   return (
     <>
-      <li className={navBar.nav_item}>
-        <button onClick={changeTheme}>
-          {theme === 'light' ? (
-            <MdDarkMode size={20} />
-          ) : (
-            <MdLightMode size={20} />
-          )}
-        </button>
-      </li>
+      <ul className={navBar.nav_links}>
+        <li className={navBar.nav_item}>
+          <button onClick={changeTheme}>
+            {theme === 'light' ? (
+              <MdDarkMode size={20} />
+            ) : (
+              <MdLightMode size={20} />
+            )}
+          </button>
+        </li>
+      </ul>
     </>
   )
 }

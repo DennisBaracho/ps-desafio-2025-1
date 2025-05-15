@@ -57,6 +57,7 @@ export default function Navbar({ logo }: navBarProps) {
               )}
             </a>
           </li>
+
           <DarkMode />
         </ul>
       </div>
