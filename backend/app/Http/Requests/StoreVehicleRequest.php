@@ -23,9 +23,9 @@ class StoreVehicleRequest extends FormRequest
     {
         return [
             'name' => ['required', 'min:3', 'max:80'],
-            'image' => ['file', 'mimes:png,jpeg,jpg,webp,svg'],
+            'image' => ['required', 'file', 'mimes:png,jpeg,jpg,webp,svg'],
             'brand' => ['required'],
-            'model_year' => ['required'],
+            'model_year' => ['required', 'min: 1886', 'max: 2025'],
             'in_stock' => ['required', 'min:0'],
             'price' => ['required', 'decimal:2', 'min: 0.00'],
             'category_id' => ['required']

@@ -71,7 +71,8 @@ export default function Home() {
         <div className={style.filters}>
           <div className={style.text}>
             <p>
-              Que frota vamos montar hoje?<br/> Arraste para o lado para mais opções.
+              Que frota vamos montar hoje?
+              <br /> Arraste para o lado para mais opções.
             </p>
           </div>
           <div className={style.swiper}>
